@@ -7,7 +7,7 @@ module.exports = function(server) {
     server.use('/api', router)
 
     // PRODUTO Routes
-    const productSchema = require('../api/projeto_tcc/productService')
-    productService.regisrer(routr, '/products')
+    const productService = require('../api/projeto_tcc/productService')
+    productService.register(router, '/products')
     
 }

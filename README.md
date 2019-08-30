@@ -12,7 +12,7 @@ Para implantar uma cópia do projeto em uma maquina local para fins de desenvolv
 
 ### Pré-requisitos
 
-Antes de começar a instalação precisamos instalar alguns programas essenciais para o desenvolvimento
+Antes de começar, precisamos instalar alguns programas essenciais para o desenvolvimento:
 
 * [Node.js](https://nodejs.org/en/)
 * [NPM](https://www.npmjs.com/)
@@ -20,7 +20,7 @@ Antes de começar a instalação precisamos instalar alguns programas essenciais
 
 ### Instalando
 
-Para realizar a instalação execute pelo prompt de comando o código abaixo nas pastas `backend` e `frontend` para realizar o download das dependências de acordo com o projeto.
+Para realizar a instalação execute pelo prompt de comando o código abaixo nas pastas `backend` e `frontend` para realizar o download das dependências de acordo com o projeto:
 
 ```
 npm install

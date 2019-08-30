@@ -12,9 +12,9 @@ const productSchema = new mongoose.Schema({
     qt_forro: { type: Number, require: true },
     ziper: { type: String, require: true },
     qt_ziper: { type: Number, require: true },
-    vl_montagem: { type: Number, require: true },
-    vl_tear:  { type: Number, require: true },
-    total_pro: { type: Number, require: true }
+    vl_montagem: { type: Number, require: false },
+    vl_tear:  { type: Number, require: false },
+    total_pro: { type: Number, require: false }
 })
 
 module.exports = restful.model('Produto', productSchema)

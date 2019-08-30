@@ -41,6 +41,6 @@ npm run dev
 
 * **Ely Fernando do Prado**
 
-## Agradecimentos
+<!---## Agradecimentos
 
-* Agradecemos a todos os docentes do curso de Sistemas de Informação do Uni-FACEF.
+* Agradecemos a todos os docentes do curso de Sistemas de Informação do Uni-FACEF.--->

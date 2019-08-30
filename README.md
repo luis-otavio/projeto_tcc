@@ -14,9 +14,9 @@ Para implantar uma cópia do projeto em uma maquina local para fins de desenvolv
 
 Antes de começar a instalação precisamos instalar alguns programas essenciais para o desenvolvimento
 
-* [Node.js] (https://nodejs.org/en/)
-* [NPM] (https://www.npmjs.com/)
-* [MongoDB] (https://www.mongodb.com/)
+* [Node.js](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/)
+* [MongoDB](https://www.mongodb.com/)
 
 ### Instalando
 

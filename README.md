@@ -20,13 +20,13 @@ Antes de começar, precisamos instalar alguns programas essenciais para o desenv
 
 ### Instalando
 
-Para realizar a instalação execute pelo prompt de comando o código abaixo nas pastas `backend` e `frontend` para realizar o download das dependências de acordo com o projeto:
+Para realizar a instalação execute pelo prompt de comando o código abaixo nas pastas `backend` e `frontend` para realizar o download das dependências de acordo com o arquivo `package.json`
 
 ```
 npm install
 ```
 
-Para executar a aplicação webservice execute o comando para fins de desenvolvimento:
+Para executar a aplicação webservice execute o comando para fins de desenvolvimento
 
 ```
 npm run dev

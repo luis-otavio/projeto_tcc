@@ -6,6 +6,10 @@ Este projeto esta sendo desenvolvido para o trabalho de conclusão de curso da 7
 
 O CadSystem tem a função de cadastrar a quantidade de matéria-prima que é gasta por produto e mão de obra, tendo o controle do estoque e custos que será gasto por produto. Retornando para o cliente o lucro real gerado por peça fabricada e vendida.
 
+## Documentação
+
+A documentação é uma parte importante do projeto, e pode ser consultado [aqui](https://github.com/luis-otavio/projeto_tcc/wiki/Documentation).
+
 ## Começando
 
 Para implantar uma cópia do projeto em uma maquina local para fins de desenvolvimento e testes, siga os passos:

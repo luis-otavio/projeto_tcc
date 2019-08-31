@@ -9,5 +9,9 @@ module.exports = function(server) {
     // PRODUTO Routes
     const productService = require('../api/projeto_tcc/productService')
     productService.register(router, '/products')
+
+    //MATERIAL Routes
+    const materialService = require('../api/projeto_tcc/materialService')
+    materialService.register(router, '/materials')
     
 }

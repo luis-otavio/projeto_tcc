@@ -7,8 +7,9 @@ export default class Material extends Component {
     render() {
         return (
             <div>
-                <PageHeader name='Matéria-Prima' small='Cadastro'></PageHeader>
+                <PageHeader name='Materia Prima' small='Cadastro'></PageHeader>
                 <MaterialForm />
+                <br />
                 <MaterialList />
             </div>
         )

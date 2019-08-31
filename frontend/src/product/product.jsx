@@ -10,7 +10,7 @@ export default class Product extends Component {
     }
 
     handleAdd() {
-        console.log(this)
+        
     }
 
     render() {

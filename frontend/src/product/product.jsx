@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+
 import PageHeader from '../template/pageHeader'
 import ProductForm from './productForm'
 import ProductList from './productList'
+
+const URL = 'http://localhost:3003/api/products'
 
 export default class Product extends Component {
     constructor(props) {
@@ -37,7 +41,32 @@ export default class Product extends Component {
     }
 
     handleAdd() {
-        console.log(this.state.description)
+        const description = this.state.description;
+        const modelo = this.state.modelo;
+        const couro = this.state.couro;
+        const qt_couro = this.state.qt_couro;
+        const metal = this.state.metal;
+        const qt_metal = this.state.qt_metal;
+        const forro = this.state.forro;
+        const qt_forro = this.state.qt_forro;
+        const ziper = this.state.ziper;
+        const qt_ziper = this.state.qt_ziper;
+        const vl_montagem = this.state.vl_montagem;
+        const vl_tear = this.state.vl_tear;
+
+        axios.post(URL, {   description,
+                            modelo,
+                            couro,
+                            qt_couro,
+                            metal,
+                            qt_metal,
+                            forro,
+                            qt_forro,
+                            ziper,
+                            qt_ziper,
+                            vl_montagem,
+                            vl_tear })
+			.then(resp => console.log('Funcionou!!'))
     }
 
     handleChangeDescription(a) {

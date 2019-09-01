@@ -20,6 +20,10 @@ export default class Material extends Component {
         this.handleChangeMatCusto = this.handleChangeMatCusto.bind(this)
 
         this.handleAdd = this.handleAdd.bind(this)
+
+        this.handleRemove = this.handleRemove.bind(this)
+
+        this.refreshMaterial()
     }
 
     handleAdd() {
@@ -30,7 +34,7 @@ export default class Material extends Component {
         axios.post(URL, {   mat_tipo,
                             mat_nome,
                             mat_custo })
-			.then(resp => console.log('Funcionou!!'))
+			.then(resp => this.refreshMaterial())
     }
 
     handleChangeMatTipo(a) {
@@ -43,6 +47,17 @@ export default class Material extends Component {
         this.setState({...this.state, mat_custo: c.target.value })
     }
 
+    refreshMaterial() {
+        axios.get(`${URL}?sort=-mat_nome`)
+            .then(resp => this.setState({...this.state, mat_nome: '', list: resp.data}))
+
+    }
+
+    handleRemove(material) {
+        axios.delete(`${URL}/${material._id}`)
+            .then(resp => this.refreshMaterial())
+    }
+
     render() {
         return (
             <div>
@@ -52,10 +67,10 @@ export default class Material extends Component {
                     handleChangeMatNome={this.handleChangeMatNome}
                     handleChangeMatCusto={this.handleChangeMatCusto}
 
-                    handleAdd={this.handleAdd}
-                />
+                    handleAdd={this.handleAdd} />
                 <br />
-                <MaterialList />
+                <MaterialList list={this.state.list} 
+                    handleRemove={this.handleRemove} />
             </div>
         )
     }

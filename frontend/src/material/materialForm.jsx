@@ -5,7 +5,7 @@ import IconButtton from '../template/iconButton'
 export default props => (
      <div role='form' className='materialForm'>
 
-        <Grid cols='12 4 3'>
+        <Grid cols='12 4 2'>
             <div>
                 <label>Tipo de material</label>
                 <select id='mat_tipo' className='form-control'
@@ -21,11 +21,11 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 4 6'>
+        <Grid cols='12 4 4'>
             <div>
-                <label>Nome</label>
+                <label>Descrição do material</label>
                 <input id='mat_nome' className='form-control'
-                    placeholder='Descrição materia prima'
+                    placeholder='Descrição'
                     onChange={props.handleChangeMatNome}
                     value={props.mat_nome}></input>
             </div>
@@ -33,7 +33,7 @@ export default props => (
 
         <Grid cols='12 2 2'>
             <div>
-                <label>Custo</label>
+                <label>Preço custo</label>
                 <input id='mat_custo' className='form-control'
                     placeholder='R$ 0,00'
                     onChange={props.handleChangeMatCusto}
@@ -41,7 +41,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 1 2'>
+        <Grid cols='12 1 6'>
             <br />
             <button className={'btn btn-success'}
                 onClick={props.handleAdd}>

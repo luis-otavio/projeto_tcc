@@ -9,7 +9,7 @@ export default props => (
             <div>
                 <label>Descrição do produto</label>
                 <input id='description' className='form-control'
-                    
+                    placeholder={'Descrição'}
                     onChange={props.handleChangeDescription}
                     value={props.description}></input>
             </div>
@@ -19,7 +19,7 @@ export default props => (
             <div>
                 <label>Modelo</label>
                 <input id='modelo' className='form-control'
-                    
+                    placeholder={'Modelo'}
                     onChange={props.handleChangeModelo}
                     value={props.modelo}></input>
             </div>
@@ -39,7 +39,7 @@ export default props => (
             <div>
                 <label>Qtde. Couro</label>
                 <input id='qt_couro' className='form-control'
-                    placeholder={'0.00'}
+                    placeholder={'0.000'}
                     onChange={props.handleChangeQtCouro}
                     value={props.qt_couro}></input>
             </div>
@@ -59,7 +59,7 @@ export default props => (
             <div>
                 <label>Qtde. Metal</label>
                 <input id='qt_metal' className='form-control'
-                    placeholder={'0.00'}
+                    placeholder={'0.000'}
                     onChange={props.handleChangeQtMetal}
                     value={props.qt_metal}></input>
             </div>
@@ -79,7 +79,7 @@ export default props => (
             <div>
                 <label>Qtde. Forro</label>
                 <input id='qt_forro' className='form-control'
-                    placeholder={'0.00'}
+                    placeholder={'0.000'}
                     onChange={props.handleChangeQtForro}
                     value={props.qt_forro}></input>
             </div>
@@ -99,7 +99,7 @@ export default props => (
             <div>
                 <label>Qtde. Ziper</label>
                 <input id='qt_ziper' className='form-control'
-                    placeholder={'0.00'}
+                    placeholder={'0.000'}
                     onChange={props.handleChangeQtZiper}
                     value={props.qt_ziper}></input>
             </div>
@@ -107,9 +107,9 @@ export default props => (
 
         <Grid cols='12 9 5'>
             <div>
-                <label>Vl. Montagem</label>
+                <label>Valor montagem</label>
                 <input id='vl_montagem' className='form-control'
-                    placeholder={'R$0.00'}
+                    placeholder={'R$ 0.00'}
                     onChange={props.handleChangeVlMontagem}
                     value={props.vl_montagem}></input>
             </div>
@@ -119,9 +119,9 @@ export default props => (
 
         <Grid cols='12 9 3'>
             <div>
-                <label>Vl. Tear</label>
+                <label>Valor tear</label>
                 <input id='vl_tear' className='form-control'
-                    placeholder={'R$0.00'}
+                    placeholder={'R$ 0.00'}
                     onChange={props.handleChangeVlTear}
                     value={props.vl_tear}></input>
             </div>

@@ -39,6 +39,8 @@ export default class Product extends Component {
 
         this.handleAdd = this.handleAdd.bind(this)
 
+        this.handleRemove = this.handleRemove.bind(this)
+
         this.refreshProduct()
     }
 
@@ -113,6 +115,11 @@ export default class Product extends Component {
             .then((resp => this.setState({...this.state, description: '', list: resp.data})))
     }
 
+    handleRemove(product) {
+        axios.delete(`${URL}/${product._id}`)
+            .then(resp => this.refreshProduct())
+    }
+
     render() {
         return (
             <div>
@@ -131,10 +138,10 @@ export default class Product extends Component {
                     handleChangeVlMontagem={this.handleChangeVlMontagem}
                     handleChangeVlTear={this.handleChangeVlTear}
 
-                    handleAdd={this.handleAdd}
-                />
+                    handleAdd={this.handleAdd}/>
                 <br />
-                <ProductList list={this.state.list}/>
+                <ProductList list={this.state.list}
+                    handleRemove={this.handleRemove} />
             </div>
         )
     }

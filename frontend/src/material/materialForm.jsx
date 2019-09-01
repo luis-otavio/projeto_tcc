@@ -20,14 +20,14 @@ export default props => (
 
         <Grid cols='6 4 5'>
             <input id='mat_name' className='form-control'
-                placeholder='Descrição matéria-prima'
+                placeholder='Descrição materia prima'
                 onChange={props.handleChange}
                 value={props.description}></input>
         </Grid>
 
         <Grid cols='4 2 2'>
             <input id='mat_value' className='form-control'
-                placeholder='Valor R$'
+                placeholder='R$ 0,00'
                 onChange={props.handleChange}
                 value={props.description}></input>
         </Grid>

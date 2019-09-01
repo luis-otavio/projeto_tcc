@@ -38,6 +38,8 @@ export default class Product extends Component {
         this.handleChangeVlTear = this.handleChangeVlTear.bind(this)
 
         this.handleAdd = this.handleAdd.bind(this)
+
+        this.refreshProduct()
     }
 
     handleAdd() {
@@ -66,7 +68,7 @@ export default class Product extends Component {
                             qt_ziper,
                             vl_montagem,
                             vl_tear })
-			.then(resp => console.log('Funcionou!!'))
+			.then(resp => this.refreshProduct())
     }
 
     handleChangeDescription(a) {
@@ -106,6 +108,11 @@ export default class Product extends Component {
         this.setState({...this.state, vl_tear: l.target.value })
     }
 
+    refreshProduct() {
+        axios.get(`${URL}?sort=-description`)
+            .then((resp => this.setState({...this.state, description: '', list: resp.data})))
+    }
+
     render() {
         return (
             <div>
@@ -127,7 +134,7 @@ export default class Product extends Component {
                     handleAdd={this.handleAdd}
                 />
                 <br />
-                <ProductList />
+                <ProductList list={this.state.list}/>
             </div>
         )
     }

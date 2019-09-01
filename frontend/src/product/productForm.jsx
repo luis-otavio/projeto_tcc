@@ -37,8 +37,9 @@ export default props => (
 
         <Grid cols='12 9 2'>
             <div>
-                <label>Qt. Couro</label>
+                <label>Qtde. Couro</label>
                 <input id='qt_couro' className='form-control'
+                    placeholder={'0.00'}
                     onChange={props.handleChangeQtCouro}
                     value={props.qt_couro}></input>
             </div>
@@ -56,9 +57,9 @@ export default props => (
 
         <Grid cols='12 9 2'>
             <div>
-                <label>Qt. Metal</label>
+                <label>Qtde. Metal</label>
                 <input id='qt_metal' className='form-control'
-                    
+                    placeholder={'0.00'}
                     onChange={props.handleChangeQtMetal}
                     value={props.qt_metal}></input>
             </div>
@@ -76,9 +77,9 @@ export default props => (
 
         <Grid cols='12 9 2'>
             <div>
-                <label>Qt. Forro</label>
+                <label>Qtde. Forro</label>
                 <input id='qt_forro' className='form-control'
-                    
+                    placeholder={'0.00'}
                     onChange={props.handleChangeQtForro}
                     value={props.qt_forro}></input>
             </div>
@@ -96,9 +97,9 @@ export default props => (
 
         <Grid cols='12 9 2'>
             <div>
-                <label>Qt. Ziper</label>
+                <label>Qtde. Ziper</label>
                 <input id='qt_ziper' className='form-control'
-                    
+                    placeholder={'0.00'}
                     onChange={props.handleChangeQtZiper}
                     value={props.qt_ziper}></input>
             </div>
@@ -108,7 +109,7 @@ export default props => (
             <div>
                 <label>Vl. Montagem</label>
                 <input id='vl_montagem' className='form-control'
-                    
+                    placeholder={'R$0.00'}
                     onChange={props.handleChangeVlMontagem}
                     value={props.vl_montagem}></input>
             </div>
@@ -116,11 +117,11 @@ export default props => (
         </Grid>
         
 
-        <Grid cols='12 9 5'>
+        <Grid cols='12 9 3'>
             <div>
                 <label>Vl. Tear</label>
                 <input id='vl_tear' className='form-control'
-                    
+                    placeholder={'R$0.00'}
                     onChange={props.handleChangeVlTear}
                     value={props.vl_tear}></input>
             </div>

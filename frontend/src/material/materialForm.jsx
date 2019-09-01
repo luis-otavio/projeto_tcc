@@ -33,7 +33,7 @@ export default props => (
         </Grid>
 
         <Grid cols='2 1 2'>
-            <button className={'btn btn-default'}
+            <button className={'btn btn-success'}
                 onClick={props.handleAdd}>
                 <i className={'fa fa-plus'}> Cadastrar </i>
             </button>

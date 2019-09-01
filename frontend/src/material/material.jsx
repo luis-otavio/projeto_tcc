@@ -48,9 +48,10 @@ export default class Material extends Component {
     }
 
     refreshMaterial() {
-        axios.get(`${URL}?sort=-mat_nome`)
-            .then(resp => this.setState({...this.state, mat_nome: '', list: resp.data}))
-
+        axios.get(`${URL}?sort=-mat_tipo`)
+            .then(resp => this.setState({
+                ...this.state,  mat_tipo: '', list: resp.data})
+        )
     }
 
     handleRemove(material) {

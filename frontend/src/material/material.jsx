@@ -20,7 +20,7 @@ export default class Material extends Component {
         this.handleChangeMatCusto = this.handleChangeMatCusto.bind(this)
 
         this.handleAdd = this.handleAdd.bind(this)
-
+        this.handleSearch = this.handleSearch.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
 
         this.refreshMaterial()
@@ -47,16 +47,20 @@ export default class Material extends Component {
         this.setState({...this.state, mat_custo: c.target.value })
     }
 
-    refreshMaterial() {
-        axios.get(`${URL}?sort=-mat_tipo`)
-            .then(resp => this.setState({
-                ...this.state,  mat_tipo: '', list: resp.data})
+    refreshMaterial(mat_nome = '') {
+        const search = mat_nome ? `&mat_nome__regex=/${mat_nome}/` : ''
+        axios.get(`${URL}?sort=-mat_nome${search}`)
+            .then(resp => this.setState({...this.state, mat_tipo, list: resp.data})
         )
     }
 
     handleRemove(material) {
         axios.delete(`${URL}/${material._id}`)
-            .then(resp => this.refreshMaterial())
+            .then(resp => this.refreshMaterial(this.state.mat_nome))
+    }
+
+    handleSearch() {
+        this.refreshMaterial(this.state.mat_nome)
     }
 
     render() {
@@ -67,7 +71,7 @@ export default class Material extends Component {
                     handleChangeMatTipo={this.handleChangeMatTipo}
                     handleChangeMatNome={this.handleChangeMatNome}
                     handleChangeMatCusto={this.handleChangeMatCusto}
-
+                    handleSearch={this.handleSearch}
                     handleAdd={this.handleAdd} />
                 <br />
                 <MaterialList list={this.state.list} 

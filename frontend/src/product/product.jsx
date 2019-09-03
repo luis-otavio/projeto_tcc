@@ -38,7 +38,7 @@ export default class Product extends Component {
         this.handleChangeVlTear = this.handleChangeVlTear.bind(this)
 
         this.handleAdd = this.handleAdd.bind(this)
-
+        this.handleSearch = this.handleSearch.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
 
         this.refreshProduct()
@@ -110,14 +110,19 @@ export default class Product extends Component {
         this.setState({...this.state, vl_tear: l.target.value })
     }
 
-    refreshProduct() {
-        axios.get(`${URL}?sort=-description`)
-            .then((resp => this.setState({...this.state, description: '', list: resp.data})))
+    refreshProduct(description = '') {
+        const search = description ? `&description__regex=/${description}/` : ''
+        axios.get(`${URL}?sort=-description${search}`)
+            .then((resp => this.setState({...this.state, description, list: resp.data})))
     }
 
     handleRemove(product) {
         axios.delete(`${URL}/${product._id}`)
-            .then(resp => this.refreshProduct())
+            .then(resp => this.refreshProduct(this.state.description))
+    }
+
+    handleSearch() {
+        this.refreshProduct(this.state.description)
     }
 
     render() {
@@ -137,7 +142,7 @@ export default class Product extends Component {
                     handleChangeQtZiper={this.handleChangeQtZiper}
                     handleChangeVlMontagem={this.handleChangeVlMontagem}
                     handleChangeVlTear={this.handleChangeVlTear}
-
+                    handleSearch={this.handleSearch}
                     handleAdd={this.handleAdd}/>
                 <br />
                 <ProductList list={this.state.list}

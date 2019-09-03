@@ -47,6 +47,10 @@ export default props => (
                 onClick={props.handleAdd}>
                 <i className={'fa fa-plus'}> Cadastrar </i>
             </button>
+            <button className={'btn btn-info'}
+                onClick={props.handleSearch}>
+                <i className={'fa fa-search'}> Pesquisar </i>
+            </button>
         </Grid>
      </div>
 )

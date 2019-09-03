@@ -10,8 +10,8 @@ export default props => (
                 <label>Descrição do produto</label>
                 <input id='description' className='form-control'
                     placeholder={'Descrição'}
-                    onChange={props.handleChangeDescription}
-                    value={props.description}></input>
+                    onChange={(e) =>{ props.handleChange('description', e.target.value)}}
+                    value={props.product.description}></input>
             </div>
         </Grid>
 
@@ -20,8 +20,8 @@ export default props => (
                 <label>Modelo</label>
                 <input id='modelo' className='form-control'
                     placeholder={'Modelo'}
-                    onChange={props.handleChangeModelo}
-                    value={props.modelo}></input>
+                    onChange={(e) =>{ props.handleChange('modelo', e.target.value)}}
+                    value={props.product.modelo}></input>
             </div>
         </Grid>
         
@@ -29,9 +29,8 @@ export default props => (
             <div>
                 <label>Couro</label>
                 <input id='couro' className='form-control'
-                    
-                    onChange={props.handleChangeCouro}
-                    value={props.couro}></input>
+                    onChange={(e) =>{ props.handleChange('couro', e.target.value)}}
+                    value={props.product.couro}></input>
             </div>
         </Grid>
 
@@ -40,8 +39,8 @@ export default props => (
                 <label>Qtde. Couro</label>
                 <input id='qt_couro' className='form-control'
                     placeholder={'0.000'}
-                    onChange={props.handleChangeQtCouro}
-                    value={props.qt_couro}></input>
+                    onChange={(e) =>{ props.handleChange('qt_couro', e.target.value)}}
+                    value={props.product.qt_couro}></input>
             </div>
         </Grid>
 
@@ -49,9 +48,8 @@ export default props => (
             <div>
                 <label>Metal</label>
                 <input id='metal' className='form-control'
-                    
-                    onChange={props.handleChangeMetal}
-                    value={props.qt_metal}></input>
+                    onChange={(e) =>{ props.handleChange('metal', e.target.value)}}
+                    value={props.product.metal}></input>
             </div>
         </Grid>
 
@@ -60,8 +58,8 @@ export default props => (
                 <label>Qtde. Metal</label>
                 <input id='qt_metal' className='form-control'
                     placeholder={'0.000'}
-                    onChange={props.handleChangeQtMetal}
-                    value={props.qt_metal}></input>
+                    onChange={(e) =>{ props.handleChange('qt_metal', e.target.value)}}
+                    value={props.product.qt_metal}></input>
             </div>
         </Grid>
 
@@ -69,9 +67,8 @@ export default props => (
             <div>
                 <label>Forro</label>
                 <input id='forro' className='form-control'
-                    
-                    onChange={props.handleChangeForro}
-                    value={props.forro}></input>
+                    onChange={(e) =>{ props.handleChange('forro', e.target.value)}}
+                    value={props.product.forro}></input>
             </div>
         </Grid>
 
@@ -80,8 +77,8 @@ export default props => (
                 <label>Qtde. Forro</label>
                 <input id='qt_forro' className='form-control'
                     placeholder={'0.000'}
-                    onChange={props.handleChangeQtForro}
-                    value={props.qt_forro}></input>
+                    onChange={(e) =>{ props.handleChange('qt_forro', e.target.value)}}
+                    value={props.product.qt_forro}></input>
             </div>
         </Grid>
 
@@ -89,9 +86,8 @@ export default props => (
             <div>
                 <label>Ziper</label>
                 <input id='ziper' className='form-control'
-                    
-                    onChange={props.handleChangeZiper}
-                    value={props.ziper}></input>
+                    onChange={(e) =>{ props.handleChange('ziper', e.target.value)}}
+                    value={props.product.ziper}></input>
             </div>
         </Grid>
 
@@ -100,8 +96,8 @@ export default props => (
                 <label>Qtde. Ziper</label>
                 <input id='qt_ziper' className='form-control'
                     placeholder={'0.000'}
-                    onChange={props.handleChangeQtZiper}
-                    value={props.qt_ziper}></input>
+                    onChange={(e) =>{ props.handleChange('qt_ziper', e.target.value)}}
+                    value={props.product.qt_ziper}></input>
             </div>
         </Grid>
 
@@ -110,20 +106,19 @@ export default props => (
                 <label>Valor montagem</label>
                 <input id='vl_montagem' className='form-control'
                     placeholder={'R$ 0.00'}
-                    onChange={props.handleChangeVlMontagem}
-                    value={props.vl_montagem}></input>
+                    onChange={(e) =>{ props.handleChange('vl_montagem', e.target.value)}}
+                    value={props.product.vl_montagem}></input>
             </div>
 
         </Grid>
         
-
         <Grid cols='12 9 3'>
             <div>
                 <label>Valor tear</label>
                 <input id='vl_tear' className='form-control'
                     placeholder={'R$ 0.00'}
-                    onChange={props.handleChangeVlTear}
-                    value={props.vl_tear}></input>
+                    onChange={(e) =>{ props.handleChange('vl_tear', e.target.value)}}
+                    value={props.product.vl_tear}></input>
             </div>
         </Grid>
 

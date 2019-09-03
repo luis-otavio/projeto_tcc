@@ -12,6 +12,10 @@ export default props => {
                     <IconButton style='danger' icon='trash-o'
                         onClick={() => props.handleRemove(product)}></IconButton>
                 </td>
+                <td>
+                    <IconButton style='primary' icon='trash-o'
+                        onClick={() => props.handleEdit(product)}></IconButton>
+                </td>
             </tr>
         ))
     }

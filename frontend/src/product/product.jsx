@@ -10,70 +10,38 @@ const URL = 'http://localhost:3003/api/products'
 export default class Product extends Component {
     constructor(props) {
         super(props)
-        this.state = {  description: '', 
-                        modelo: '',
-                        couro: '',
-                        qt_couro: '',
-                        metal: '',
-                        qt_metal: '',
-                        forro: '',
-                        qt_forro: '',
-                        ziper: '',
-                        qt_ziper: '',
-                        vl_montagem: '',
-                        vl_tear: '',
+        this.state = {  product: {
+                            description: '', 
+                            modelo: '',
+                            couro: '',
+                            qt_couro: '',
+                            metal: '',
+                            qt_metal: '',
+                            forro: '',
+                            qt_forro: '',
+                            ziper: '',
+                            qt_ziper: '',
+                            vl_montagem: '',
+                            vl_tear: '',
+                        },
                         list: [] }
 
-        this.handleChangeDescription = this.handleChangeDescription.bind(this)
-        this.handleChangeModelo = this.handleChangeModelo.bind(this)
-        this.handleChangeCouro = this.handleChangeCouro.bind(this)
-        this.handleChangeQtCouro = this.handleChangeQtCouro.bind(this)
-        this.handleChangeMetal = this.handleChangeMetal.bind(this)
-        this.handleChangeQtMetal = this.handleChangeQtMetal.bind(this)
-        this.handleChangeForro = this.handleChangeForro.bind(this)
-        this.handleChangeQtForro = this.handleChangeQtForro.bind(this)
-        this.handleChangeZiper = this.handleChangeZiper.bind(this)
-        this.handleChangeQtZiper = this.handleChangeQtZiper.bind(this)
-        this.handleChangeVlMontagem = this.handleChangeVlMontagem.bind(this)
-        this.handleChangeVlTear = this.handleChangeVlTear.bind(this)
+        this.handleChange = this.handleChange.bind(this)
 
         this.handleAdd = this.handleAdd.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
+        this.handleEdit = this.handleEdit.bind(this)
 
         this.refreshProduct()
     }
 
     handleAdd() {
-        const description = this.state.description;
-        const modelo = this.state.modelo;
-        const couro = this.state.couro;
-        const qt_couro = this.state.qt_couro;
-        const metal = this.state.metal;
-        const qt_metal = this.state.qt_metal;
-        const forro = this.state.forro;
-        const qt_forro = this.state.qt_forro;
-        const ziper = this.state.ziper;
-        const qt_ziper = this.state.qt_ziper;
-        const vl_montagem = this.state.vl_montagem;
-        const vl_tear = this.state.vl_tear;
-
-        axios.post(URL, {   description,
-                            modelo,
-                            couro,
-                            qt_couro,
-                            metal,
-                            qt_metal,
-                            forro,
-                            qt_forro,
-                            ziper,
-                            qt_ziper,
-                            vl_montagem,
-                            vl_tear })
+        axios.post(URL, this.state.product)
 			.then(resp => this.refreshProduct())
     }
 
-    handleChangeDescription(a) {
+    /*handleChangeDescription(a) {
         this.setState({...this.state, description: a.target.value })
     }
     handleChangeModelo(b) {
@@ -108,6 +76,12 @@ export default class Product extends Component {
     }
     handleChangeVlTear(l) {
         this.setState({...this.state, vl_tear: l.target.value })
+    }*/
+
+    handleChange(key, value) {
+        let product = this.state.product
+        product[key] = value
+        this.setState({...this.state, product})
     }
 
     refreshProduct(description = '') {
@@ -118,7 +92,12 @@ export default class Product extends Component {
 
     handleRemove(product) {
         axios.delete(`${URL}/${product._id}`)
-            .then(resp => this.refreshProduct(this.state.description))
+            .then(resp => this.refreshProduct(this.state.product.description))
+    }
+    
+    handleEdit(product) {
+        this.setState({...this.state, product: product})
+        
     }
 
     handleSearch() {
@@ -129,24 +108,14 @@ export default class Product extends Component {
         return (
             <div>
                 <PageHeader name='Produtos' small='Cadastro'></PageHeader>
-                <ProductForm description={this.state.description}
-                    handleChangeDescription={this.handleChangeDescription}
-                    handleChangeModelo={this.handleChangeModelo}
-                    handleChangeCouro={this.handleChangeCouro}
-                    handleChangeQtCouro={this.handleChangeQtCouro}
-                    handleChangeMetal={this.handleChangeMetal}
-                    handleChangeQtMetal={this.handleChangeQtMetal}
-                    handleChangeForro={this.handleChangeForro}
-                    handleChangeQtForro={this.handleChangeQtForro}
-                    handleChangeZiper={this.handleChangeZiper}
-                    handleChangeQtZiper={this.handleChangeQtZiper}
-                    handleChangeVlMontagem={this.handleChangeVlMontagem}
-                    handleChangeVlTear={this.handleChangeVlTear}
+                <ProductForm product={this.state.product}
+                    handleChange={this.handleChange}
                     handleSearch={this.handleSearch}
-                    handleAdd={this.handleAdd}/>
-                <br />
+                    handleAdd={this.handleAdd}
+                    />
                 <ProductList list={this.state.list}
-                    handleRemove={this.handleRemove} />
+                    handleRemove={this.handleRemove}
+                    handleEdit={this.handleEdit} />
             </div>
         )
     }

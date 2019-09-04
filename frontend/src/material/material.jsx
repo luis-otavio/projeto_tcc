@@ -10,41 +10,30 @@ const URL = 'http://localhost:3003/api/materials'
 export default class Material extends Component {
     constructor(props) {
         super(props)
-        this.state = {  mat_tipo: '',
-                        mat_nome: '',
-                        mat_custo: '',
+        this.state = {  material: {
+                            mat_tipo: '',
+                            mat_nome: '',
+                            mat_custo: '',
+                        },
                         list: [] }
 
-        this.handleChangeMatTipo = this.handleChangeMatTipo.bind(this)
-        this.handleChangeMatNome = this.handleChangeMatNome.bind(this)
-        this.handleChangeMatCusto = this.handleChangeMatCusto.bind(this)
-
+        this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
-
+        this.handleEdit = this.handleEdit.bind(this)
         this.refreshMaterial()
     }
 
     handleAdd() {
-        const mat_tipo = this.state.mat_tipo;
-        const mat_nome = this.state.mat_nome;
-        const mat_custo = this.state.mat_custo;
-
-        axios.post(URL, {   mat_tipo,
-                            mat_nome,
-                            mat_custo })
+        axios.post(URL, this.state.material)
 			.then(resp => this.refreshMaterial())
     }
 
-    handleChangeMatTipo(a) {
-        this.setState({...this.state, mat_tipo: a.target.value })
-    }
-    handleChangeMatNome(b) {
-        this.setState({...this.state, mat_nome: b.target.value })
-    }
-    handleChangeMatCusto(c) {
-        this.setState({...this.state, mat_custo: c.target.value })
+    handleChange(key, value) {
+        let material = this.state.material
+        material[key] = value
+        this.setState({...this.state, material})
     }
 
     refreshMaterial(mat_nome = '') {
@@ -56,26 +45,30 @@ export default class Material extends Component {
 
     handleRemove(material) {
         axios.delete(`${URL}/${material._id}`)
-            .then(resp => this.refreshMaterial(this.state.mat_nome))
+            .then(resp => this.refreshMaterial(this.state.material.mat_nome))
+    }
+
+    handleEdit(material) {
+        this.setState({...this.state, material: material})
+        
     }
 
     handleSearch() {
-        this.refreshMaterial(this.state.mat_nome)
+        this.refreshMaterial(this.state.material.mat_nome)
     }
 
     render() {
         return (
             <div>
                 <PageHeader name='Materia Prima' small='Cadastro'></PageHeader>
-                <MaterialForm mat_tipo={this.state.mat_tipo}
-                    handleChangeMatTipo={this.handleChangeMatTipo}
-                    handleChangeMatNome={this.handleChangeMatNome}
-                    handleChangeMatCusto={this.handleChangeMatCusto}
+                <MaterialForm material={this.state.material}
+                    handleChange={this.handleChange}
                     handleSearch={this.handleSearch}
                     handleAdd={this.handleAdd} />
                 <br />
                 <MaterialList list={this.state.list} 
-                    handleRemove={this.handleRemove} />
+                    handleRemove={this.handleRemove} 
+                    handleEdit={this.handleEdit}/>
             </div>
         )
     }

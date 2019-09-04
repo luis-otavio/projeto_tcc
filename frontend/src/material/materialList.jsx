@@ -10,8 +10,14 @@ export default props => {
                 <td>{material.mat_nome}</td>
                 <td>R$ {material.mat_custo}</td>
                 <td>
-                    <IconButton style='danger' icon='trash-o'
-                        onClick={() => props.handleRemove(material)}></IconButton>
+                    <button className={'btn btn-danger'}
+                        onClick={() => props.handleRemove(material)}>
+                        <i className={'fa fa-trash-o'}> Apagar </i>
+                    </button>
+                    <button className={'btn btn-warning'}
+                        onClick={() => props.handleRemove(material)}>
+                        <i className={'fa fa-pencil'}> Editar </i>
+                    </button>
                 </td>
             </tr>
         ))

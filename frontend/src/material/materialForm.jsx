@@ -41,7 +41,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 1 6'>
+        <Grid cols='12 1 4'>
             <br />
             <button className={'btn btn-success'}
                 onClick={props.handleAdd}>

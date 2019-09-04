@@ -8,7 +8,7 @@ export default props => {
         return list.map(material => (
             <tr key={material._id}>
                 <td>{material.mat_nome}</td>
-                <td>{material.mat_custo}</td>
+                <td>R$ {material.mat_custo}</td>
                 <td>
                     <IconButton style='danger' icon='trash-o'
                         onClick={() => props.handleRemove(material)}></IconButton>
@@ -18,7 +18,7 @@ export default props => {
     }
 
     return (
-        <table className='tableMaterial'>
+        <table className='table'>
             <thead>
                 <tr>
                     <th>Descrição</th>

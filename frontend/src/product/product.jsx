@@ -113,6 +113,7 @@ export default class Product extends Component {
                     handleSearch={this.handleSearch}
                     handleAdd={this.handleAdd}
                     />
+                <br />
                 <ProductList list={this.state.list}
                     handleRemove={this.handleRemove}
                     handleEdit={this.handleEdit} />

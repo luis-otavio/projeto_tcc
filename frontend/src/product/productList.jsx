@@ -13,7 +13,7 @@ export default props => {
                         onClick={() => props.handleRemove(product)}></IconButton>
                 </td>
                 <td>
-                    <IconButton style='primary' icon='trash-o'
+                    <IconButton style='outline-warning' icon='pencil'
                         onClick={() => props.handleEdit(product)}></IconButton>
                 </td>
             </tr>
@@ -21,7 +21,7 @@ export default props => {
     }
 
     return (
-        <table className='tableProduct'>
+        <table className='table'>
             <thead>
                 <tr>
                     <th>Descrição do produto</th>

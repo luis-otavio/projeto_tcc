@@ -128,7 +128,7 @@ export default props => (
             <div className="col-12 ">
                 <button className={'btn btn-success'}
                     onClick={props.handleAdd}>
-                    <i className={'fa fa-plus'}> Cadastrar </i>
+                    <i className={'fa fa-check'}> Salvar </i>
                 </button>
                 <button className={'btn btn-info'}
                     onClick={props.handleSearch}>

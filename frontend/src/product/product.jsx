@@ -40,44 +40,7 @@ export default class Product extends Component {
         axios.post(URL, this.state.product)
 			.then(resp => this.refreshProduct())
     }
-
-    /*handleChangeDescription(a) {
-        this.setState({...this.state, description: a.target.value })
-    }
-    handleChangeModelo(b) {
-        this.setState({...this.state, modelo: b.target.value })
-    }
-    handleChangeCouro(c) {
-        this.setState({...this.state, couro: c.target.value })
-    }
-    handleChangeQtCouro(d) {
-        this.setState({...this.state, qt_couro: d.target.value })
-    }
-    handleChangeMetal(e) {
-        this.setState({...this.state, metal: e.target.value })
-    }
-    handleChangeQtMetal(f) {
-        this.setState({...this.state, qt_metal: f.target.value })
-    }
-    handleChangeForro(g) {
-        this.setState({...this.state, forro: g.target.value })
-    }
-    handleChangeQtForro(h) {
-        this.setState({...this.state, qt_forro: h.target.value })
-    }
-    handleChangeZiper(i) {
-        this.setState({...this.state, ziper: i.target.value })
-    }
-    handleChangeQtZiper(j) {
-        this.setState({...this.state, qt_ziper: j.target.value })
-    }
-    handleChangeVlMontagem(k) {
-        this.setState({...this.state, vl_montagem: k.target.value })
-    }
-    handleChangeVlTear(l) {
-        this.setState({...this.state, vl_tear: l.target.value })
-    }*/
-
+    
     handleChange(key, value) {
         let product = this.state.product
         product[key] = value

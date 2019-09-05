@@ -13,10 +13,10 @@ export default props => (
                     onChange={(e) =>{ props.handleChange('mat_tipo', e.target.value)}}
                     value={props.material.mat_tipo}>
                         <option value="">Selecione</option>
-                        <option value="couro">Couro</option>
-                        <option value="metal">Metal</option>
-                        <option value="forro">Forro</option>
-                        <option value="ziper">Zíper</option>
+                        <option value="Couro">Couro</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Forro">Forro</option>
+                        <option value="Ziper">Zíper</option>
                 </select>
             </div>
         </Grid>

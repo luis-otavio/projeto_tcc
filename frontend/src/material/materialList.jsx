@@ -7,6 +7,7 @@ export default props => {
         const list = props.list || []
         return list.map(material => (
             <tr key={material._id}>
+                <td>{material.mat_tipo}</td>
                 <td>{material.mat_nome}</td>
                 <td>R$ {material.mat_custo}</td>
                 <td>
@@ -27,6 +28,7 @@ export default props => {
         <table className='table'>
             <thead>
                 <tr>
+                    <th>Tipo</th>
                     <th>Descrição</th>
                     <th>Custo</th>
                     <th className='tableActions'></th>

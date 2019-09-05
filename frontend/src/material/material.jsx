@@ -61,6 +61,7 @@ export default class Material extends Component {
         return (
             <div>
                 <PageHeader name='Materia Prima' small='Cadastro'></PageHeader>
+                <hr style={{borderColor: '#000'}}/>
                 <MaterialForm material={this.state.material}
                     handleChange={this.handleChange}
                     handleSearch={this.handleSearch}

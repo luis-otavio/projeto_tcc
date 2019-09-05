@@ -21,7 +21,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 4 4'>
+        <Grid cols='12 4 5'>
             <div>
                 <label>Descrição do material</label>
                 <input id='mat_nome' className='form-control'
@@ -50,6 +50,10 @@ export default props => (
             <button className={'btn btn-info'}
                 onClick={props.handleSearch}>
                 <i className={'fa fa-search'}> Pesquisar </i>
+            </button>
+            <button className={'btn btn-default'}
+                onClick={props.handleClear}>
+                <i className={'fa fa-close'}> Cancelar </i>
             </button>
         </Grid>
      </div>

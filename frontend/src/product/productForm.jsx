@@ -6,7 +6,7 @@ import Main from '../template/main'
 export default props => (
     <div role='form' className='productForm'>
         
-        <Grid cols='12 9 10'>
+        <Grid cols='12 9 6'>
             <div>
                 <label>Descrição do produto</label>
                 <input id='description' className='form-control'
@@ -16,7 +16,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 2'>
+        <Grid cols='12 9 3'>
             <div>
                 <label>Modelo</label>
                 <input id='modelo' className='form-control'
@@ -26,7 +26,7 @@ export default props => (
             </div>
         </Grid>
         
-        <Grid cols='12 9 8'>
+        <Grid cols='12 9 6'>
             <div>
                 <label>Couro</label>
                 <input id='couro' className='form-control'
@@ -35,7 +35,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 4'>
+        <Grid cols='12 9 3'>
             <div>
                 <label>Qtde. Couro</label>
                 <input id='qt_couro' className='form-control'
@@ -45,7 +45,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 8'>
+        <Grid cols='12 9 6'>
             <div>
                 <label>Metal</label>
                 <input id='metal' className='form-control'
@@ -54,7 +54,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 4'>
+        <Grid cols='12 9 3'>
             <div>
                 <label>Qtde. Metal</label>
                 <input id='qt_metal' className='form-control'
@@ -64,7 +64,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 8'>
+        <Grid cols='12 9 6'>
             <div>
                 <label>Forro</label>
                 <input id='forro' className='form-control'
@@ -73,7 +73,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 4'>
+        <Grid cols='12 9 3'>
             <div>
                 <label>Qtde. Forro</label>
                 <input id='qt_forro' className='form-control'
@@ -83,7 +83,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 8'>
+        <Grid cols='12 9 6'>
             <div>
                 <label>Ziper</label>
                 <input id='ziper' className='form-control'
@@ -92,7 +92,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 4'>
+        <Grid cols='12 9 3'>
             <div>
                 <label>Qtde. Ziper</label>
                 <input id='qt_ziper' className='form-control'
@@ -102,7 +102,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 5'>
             <div>
                 <label>Valor montagem</label>
                 <input id='vl_montagem' className='form-control'
@@ -113,7 +113,7 @@ export default props => (
 
         </Grid>
         
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 4'>
             <div>
                 <label>Valor tear</label>
                 <input id='vl_tear' className='form-control'
@@ -122,10 +122,9 @@ export default props => (
                     value={props.product.vl_tear}></input>
             </div>
         </Grid>
-        <hr />
-        <Grid cols='12 9 4'>
+        <Grid cols='12 9 12'>
             <br />
-            <div className="col-12 ">
+            <div className="col-12">
                 <button className={'btn btn-success'}
                     onClick={props.handleAdd}>
                     <i className={'fa fa-check'}> Salvar </i>
@@ -133,6 +132,10 @@ export default props => (
                 <button className={'btn btn-info'}
                     onClick={props.handleSearch}>
                     <i className={'fa fa-search'}> Pesquisar </i>
+                </button>
+                <button className={'btn btn-default'}
+                    onClick={props.handleClear}>
+                    <i className={'fa fa-close'}> Cancelar </i>
                 </button>
             </div>
             <br />

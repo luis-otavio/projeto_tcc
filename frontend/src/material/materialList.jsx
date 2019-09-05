@@ -15,7 +15,7 @@ export default props => {
                         <i className={'fa fa-trash-o'}> Apagar </i>
                     </button>
                     <button className={'btn btn-warning'}
-                        onClick={() => props.handleRemove(material)}>
+                        onClick={() => props.handleEdit(material)}>
                         <i className={'fa fa-pencil'}> Editar </i>
                     </button>
                 </td>
@@ -29,7 +29,7 @@ export default props => {
                 <tr>
                     <th>Descrição</th>
                     <th>Custo</th>
-                    <th>Ações</th>
+                    <th className='tableActions'></th>
                 </tr>
             </thead>
             <tbody>

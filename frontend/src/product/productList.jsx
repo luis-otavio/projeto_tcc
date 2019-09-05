@@ -8,13 +8,16 @@ export default props => {
         return list.map(product => (
             <tr key={product._id}>
                 <td>{product.description}</td>
-                <td>
-                    <IconButton style='danger' icon='trash-o'
-                        onClick={() => props.handleRemove(product)}></IconButton>
-                </td>
-                <td>
-                    <IconButton style='outline-warning' icon='pencil'
-                        onClick={() => props.handleEdit(product)}></IconButton>
+                <td>R$ </td>
+                 <td>
+                    <button className={'btn btn-danger'}
+                        onClick={() => props.handleRemove(product)}>
+                        <i className={'fa fa-trash-o'}> Apagar </i>
+                    </button>
+                    <button className={'btn btn-warning'}
+                        onClick={() => props.handleEdit(product)}>
+                        <i className={'fa fa-pencil'}> Editar </i>
+                    </button>
                 </td>
             </tr>
         ))
@@ -25,7 +28,8 @@ export default props => {
             <thead>
                 <tr>
                     <th>Descrição do produto</th>
-                    <th>Ações</th>
+                    <th>Custo final</th>
+                    <th className='tableActions'></th>
                 </tr>
             </thead>
             <tbody>

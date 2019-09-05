@@ -3,5 +3,21 @@
 }
 
 .tableActions {
-    width: 105px;
+    width: 200px;
 }
+
+.productForm, .materialForm {
+    padding-bottom: 120px;
+    
+    /*padding-left: 260px;*/
+}
+
+/*.col-12{
+    width: 620px;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    position: relative;
+}*/

@@ -44,7 +44,7 @@ export default props => (
         <Grid cols='12 9 12'>
             <br /><br />
             <div className="col-12 material">
-                <button className={'btn btn-info'}
+                <button className={'btn btn-default'}
                     onClick={props.handleSearch}>
                     <i className={'fa fa-search'}> Pesquisar </i>
                 </button>

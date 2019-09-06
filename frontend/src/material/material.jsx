@@ -65,7 +65,7 @@ export default class Material extends Component {
     }
 
     handleSearch() {
-        this.refreshMaterial(this.state.material.mat_nome)
+        this.refreshMaterial(this.state.mat_nome)
     }
 
     handleClear() {

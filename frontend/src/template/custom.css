@@ -6,6 +6,10 @@
     padding-left: 300px;
 }
 
+.material {
+    padding-left: 285px;
+}
+
 .buttonSalvar {
     margin-left: 35px;
     margin-right: 35px;
@@ -18,9 +22,11 @@
     padding: 20px;
 }
 
-.productButton {
+.productButton, .materialButton {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-left: 40%;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .table {
@@ -41,4 +47,5 @@
 
 .materialForm {
     padding-bottom: 100px;
+    padding-left: 80px;
 }

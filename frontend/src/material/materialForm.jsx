@@ -5,7 +5,7 @@ import IconButtton from '../template/iconButton'
 export default props => (
      <div role='form' className='materialForm'>
 
-        <Grid cols='12 4 2'>
+        <Grid cols='12 4 3'>
             <div>
                 <label>Tipo de material</label>
                 <select id='mat_tipo' className='form-control'
@@ -21,7 +21,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 4 5'>
+        <Grid cols='12 4 6'>
             <div>
                 <label>Descrição do material</label>
                 <input id='mat_nome' className='form-control'
@@ -41,20 +41,23 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 1 4'>
+        <Grid cols='12 9 12'>
+            <br /><br />
+            <div className="col-12 material">
+                <button className={'btn btn-info'}
+                    onClick={props.handleSearch}>
+                    <i className={'fa fa-search'}> Pesquisar </i>
+                </button>
+                <button className={'btn btn-success buttonSalvar'}
+                    onClick={props.handleAdd}>
+                    <i className={'fa fa-save'}> Salvar </i>
+                </button>
+                <button className={'btn btn-danger'}
+                    onClick={props.handleClear}>
+                    <i className={'fa fa-close'}> Cancelar </i>
+                </button>
+            </div>
             <br />
-            <button className={'btn btn-success'}
-                onClick={props.handleAdd}>
-                <i className={'fa fa-check'}> Salvar </i>
-            </button>
-            <button className={'btn btn-info'}
-                onClick={props.handleSearch}>
-                <i className={'fa fa-search'}> Pesquisar </i>
-            </button>
-            <button className={'btn btn-default'}
-                onClick={props.handleClear}>
-                <i className={'fa fa-close'}> Cancelar </i>
-            </button>
         </Grid>
      </div>
 )

@@ -7,15 +7,19 @@ import MaterialList from './materialList'
 
 const URL = 'http://localhost:3003/api/materials'
 
+const initialMaterial = {
+    mat_tipo: '',
+    mat_nome: '',
+    mat_custo: '',
+}
+
 export default class Material extends Component {
     constructor(props) {
         super(props)
-        this.state = {  material: {
-                            mat_tipo: '',
-                            mat_nome: '',
-                            mat_custo: '',
-                        },
-                        list: [] }
+        this.state = {  material: { ...initialMaterial },
+                        list: [],
+                        show: false 
+        },               
 
         this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
@@ -23,6 +27,13 @@ export default class Material extends Component {
         this.handleRemove = this.handleRemove.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
         this.refreshMaterial()
+
+        this.toggleComponent = this.toggleComponent.bind(this)
+    }
+
+    toggleComponent() {
+        const { show } = this.state
+        this.setState({ show : !show })
     }
 
     handleAdd() {
@@ -39,13 +50,13 @@ export default class Material extends Component {
     refreshMaterial(mat_nome = '') {
         const search = mat_nome ? `&mat_nome__regex=/${mat_nome}/` : ''
         axios.get(`${URL}?sort=-mat_nome${search}`)
-            .then(resp => this.setState({...this.state, mat_tipo, list: resp.data})
+            .then(resp => this.setState({...this.state, material: { ...initialMaterial },list: resp.data})
         )
     }
 
     handleRemove(material) {
         axios.delete(`${URL}/${material._id}`)
-            .then(resp => this.refreshMaterial(this.state.material.mat_nome))
+            .then(resp => this.refreshMaterial())
     }
 
     handleEdit(material) {
@@ -57,15 +68,29 @@ export default class Material extends Component {
         this.refreshMaterial(this.state.material.mat_nome)
     }
 
+    handleClear() {
+        this.refreshMaterial()
+    }
     render() {
         return (
             <div>
-                <PageHeader name='Materia Prima' small='Cadastro'></PageHeader>
+                <PageHeader name='Matéria Prima' small='Cadastro'></PageHeader>
+                <div className="containerCard">
+                    <div className="materialButton">
+                        <button className={'btn btn-dark cad'}
+                            onClick={this.toggleComponent}>Cadastrar matéria prima</button>
+                    </div>
+                    <br />
+                    { this.state.show && <MaterialForm material={this.state.material}
+                                                handleChange={this.handleChange}
+                                                handleSearch={this.handleSearch}
+                                                handleAdd={this.handleAdd} />}
+                </div>
                 <hr style={{borderColor: '#000'}}/>
-                <MaterialForm material={this.state.material}
-                    handleChange={this.handleChange}
-                    handleSearch={this.handleSearch}
-                    handleAdd={this.handleAdd} />
+                <br />
+                <div>
+                    <h3>Lista de materiais</h3>
+                </div>
                 <br />
                 <MaterialList list={this.state.list} 
                     handleRemove={this.handleRemove} 

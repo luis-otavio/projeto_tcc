@@ -5,7 +5,7 @@ export default props => (
         <div className='container'>
             <div className='navbar-header'>
                 <a className='navbar-brand' href='#'>
-                    <i className='fa fa-edit'></i> CadSystem
+                    <i className='fa fa-clipboard'></i> CadSystem
                 </a>
             </div>
 

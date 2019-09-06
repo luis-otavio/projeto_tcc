@@ -1,12 +1,11 @@
 import React from 'react'
 import Grid from '../template/grid'
 import IconButtton from '../template/iconButton'
-import Main from '../template/main'
 
 export default props => (
     <div role='form' className='productForm'>
         
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 9'>
             <div>
                 <label>Descrição do produto</label>
                 <input id='description' className='form-control'
@@ -16,7 +15,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 3'>
+        <Grid cols='12 9 2'>
             <div>
                 <label>Modelo</label>
                 <input id='modelo' className='form-control'
@@ -26,7 +25,7 @@ export default props => (
             </div>
         </Grid>
         
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 7'>
             <div>
                 <label>Couro</label>
                 <input id='couro' className='form-control'
@@ -35,7 +34,15 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 3'>
+        <Grid cols='12 9 2'>
+            <div>
+                <label>Valor custo</label>
+                <input id='qt_couro' className='form-control'
+                    placeholder={'R$ 0,00'} disabled></input>
+            </div>
+        </Grid>
+
+        <Grid cols='12 9 2'>
             <div>
                 <label>Qtde. Couro</label>
                 <input id='qt_couro' className='form-control'
@@ -45,7 +52,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 7'>
             <div>
                 <label>Metal</label>
                 <input id='metal' className='form-control'
@@ -54,7 +61,15 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 3'>
+        <Grid cols='12 9 2'>
+            <div>
+                <label>Valor custo</label>
+                <input id='qt_couro' className='form-control'
+                    placeholder={'R$ 0,00'} disabled></input>
+            </div>
+        </Grid>
+
+        <Grid cols='12 9 2'>
             <div>
                 <label>Qtde. Metal</label>
                 <input id='qt_metal' className='form-control'
@@ -64,7 +79,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 7'>
             <div>
                 <label>Forro</label>
                 <input id='forro' className='form-control'
@@ -73,7 +88,15 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 3'>
+        <Grid cols='12 9 2'>
+            <div>
+                <label>Valor custo</label>
+                <input id='qt_couro' className='form-control'
+                    placeholder={'R$ 0,00'} disabled></input>
+            </div>
+        </Grid>
+
+        <Grid cols='12 9 2'>
             <div>
                 <label>Qtde. Forro</label>
                 <input id='qt_forro' className='form-control'
@@ -83,7 +106,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 6'>
+        <Grid cols='12 9 7'>
             <div>
                 <label>Ziper</label>
                 <input id='ziper' className='form-control'
@@ -92,7 +115,15 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 3'>
+        <Grid cols='12 9 2'>
+            <div>
+                <label>Valor custo</label>
+                <input id='qt_couro' className='form-control'
+                    placeholder={'R$ 0,00'} disabled></input>
+            </div>
+        </Grid>
+
+        <Grid cols='12 9 2'>
             <div>
                 <label>Qtde. Ziper</label>
                 <input id='qt_ziper' className='form-control'
@@ -102,7 +133,7 @@ export default props => (
             </div>
         </Grid>
 
-        <Grid cols='12 9 5'>
+        <Grid cols='12 9 2'>
             <div>
                 <label>Valor montagem</label>
                 <input id='vl_montagem' className='form-control'
@@ -113,7 +144,7 @@ export default props => (
 
         </Grid>
         
-        <Grid cols='12 9 4'>
+        <Grid cols='12 9 2'>
             <div>
                 <label>Valor tear</label>
                 <input id='vl_tear' className='form-control'
@@ -122,18 +153,23 @@ export default props => (
                     value={props.product.vl_tear}></input>
             </div>
         </Grid>
+        <Grid cols='12 9 6'>
+            <div className="totalProduct">
+                <h2>Total: R$ 0,00</h2>
+            </div>
+        </Grid>
         <Grid cols='12 9 12'>
-            <br />
+            <br /><br />
             <div className="col-12">
-                <button className={'btn btn-success'}
-                    onClick={props.handleAdd}>
-                    <i className={'fa fa-check'}> Salvar </i>
-                </button>
                 <button className={'btn btn-info'}
                     onClick={props.handleSearch}>
                     <i className={'fa fa-search'}> Pesquisar </i>
                 </button>
-                <button className={'btn btn-default'}
+                <button className={'btn btn-success buttonSalvar'}
+                    onClick={props.handleAdd}>
+                    <i className={'fa fa-save'}> Salvar </i>
+                </button>
+                <button className={'btn btn-danger'}
                     onClick={props.handleClear}>
                     <i className={'fa fa-close'}> Cancelar </i>
                 </button>

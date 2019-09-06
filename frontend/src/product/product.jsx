@@ -4,28 +4,35 @@ import axios from 'axios'
 import PageHeader from '../template/pageHeader'
 import ProductForm from './productForm'
 import ProductList from './productList'
+import ProductButton from './productButton'
 
 const URL = 'http://localhost:3003/api/products'
+
+const initialProduct = {
+    description: '', 
+    modelo: '',
+    couro: '',
+    qt_couro: '',
+    metal: '',
+    qt_metal: '',
+    forro: '',
+    qt_forro: '',
+    ziper: '',
+    qt_ziper: '',
+    vl_montagem: '',
+    vl_tear: '',
+}
 
 export default class Product extends Component {
     constructor(props) {
         super(props)
-        this.state = {  product: {
-                            description: '', 
-                            modelo: '',
-                            couro: '',
-                            qt_couro: '',
-                            metal: '',
-                            qt_metal: '',
-                            forro: '',
-                            qt_forro: '',
-                            ziper: '',
-                            qt_ziper: '',
-                            vl_montagem: '',
-                            vl_tear: '',
-                        },
-                        list: [] }
+        this.state = {  
+            product: { ...initialProduct },
+            list: [],
+            show: false 
+        }
 
+        //Eventos que consogem API
         this.handleChange = this.handleChange.bind(this)
         this.handleClear = this.handleClear.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
@@ -33,6 +40,13 @@ export default class Product extends Component {
         this.handleRemove = this.handleRemove.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
         this.refreshProduct()
+
+        this.toggleComponent = this.toggleComponent.bind(this)
+    }
+
+    toggleComponent() {
+        const { show } = this.state
+        this.setState({ show : !show })
     }
 
     handleAdd() {
@@ -47,14 +61,15 @@ export default class Product extends Component {
     }
 
     refreshProduct(description = '') {
+        console.log(initialProduct)
         const search = description ? `&description__regex=/${description}/` : ''
         axios.get(`${URL}?sort=-description${search}`)
-            .then((resp => this.setState({...this.state, description, list: resp.data})))
+            .then((resp => this.setState({...this.state, product: { ...initialProduct }, list: resp.data})))
     }
 
     handleRemove(product) {
         axios.delete(`${URL}/${product._id}`)
-            .then(resp => this.refreshProduct(this.state.product.description))
+            .then(resp => this.refreshProduct())
     }
     
     handleEdit(product) {
@@ -72,14 +87,24 @@ export default class Product extends Component {
     render() {
         return (
             <div>
-                <PageHeader name='Produtos' small='Cadastro'></PageHeader>
+                <PageHeader name='Produto' small='Cadastro'></PageHeader>
+                <div className="containerCard">
+                    <div className="productButton">
+                        <button className={'btn btn-dark cad'}
+                            onClick={this.toggleComponent}>Cadastrar novo produto</button>
+                    </div>
+                    <br />
+                    { this.state.show && <ProductForm product={this.state.product}
+                                            handleChange={this.handleChange}
+                                            handleSearch={this.handleSearch}
+                                            handleAdd={this.handleAdd}
+                                            handleClear={this.handleClear}/>}
+                </div>
                 <hr style={{borderColor: '#000'}}/>
-                <ProductForm product={this.state.product}
-                    handleChange={this.handleChange}
-                    handleSearch={this.handleSearch}
-                    handleAdd={this.handleAdd}
-                    handleClear={this.handleClear}
-                    />
+                <br />
+                <div>
+                    <h3>Lista de produtos</h3>
+                </div>
                 <br />
                 <ProductList list={this.state.list}
                     handleRemove={this.handleRemove}

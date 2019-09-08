@@ -49,19 +49,18 @@ export default class Product extends Component {
         this.setState({ show : !show })
     }
 
-    handleAdd() {
-        axios.post(URL, this.state.product)
-			.then(resp => this.refreshProduct())
-    }
-    
     handleChange(key, value) {
         let product = this.state.product
         product[key] = value
         this.setState({...this.state, product})
     }
 
+    handleAdd() {
+        axios.post(URL, this.state.product)
+			.then(resp => this.refreshProduct())
+    }
+
     refreshProduct(description = '') {
-        console.log(initialProduct)
         const search = description ? `&description__regex=/${description}/` : ''
         axios.get(`${URL}?sort=-description${search}`)
             .then((resp => this.setState({...this.state, product: { ...initialProduct }, list: resp.data})))

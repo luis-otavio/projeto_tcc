@@ -90,7 +90,7 @@ export default class Product extends Component {
                 <div className="containerCard">
                     <div className="productButton">
                         <button className={'btn btn-dark cad'}
-                            onClick={this.toggleComponent}>Cadastrar novo produto</button>
+                            onClick={this.toggleComponent}><h4>Cadastrar novo produto</h4></button>
                     </div>
                     <br />
                     { this.state.show && <ProductForm product={this.state.product}

@@ -155,7 +155,10 @@ export default props => (
         </Grid>
         <Grid cols='12 9 6'>
             <div className="totalProduct">
-                <h2>Total: R$ 0,00</h2>
+                <h4>Total: </h4>
+                <div >
+                    <h2>R$ 0,00</h2>
+                </div>
             </div>
         </Grid>
         <Grid cols='12 9 12'>

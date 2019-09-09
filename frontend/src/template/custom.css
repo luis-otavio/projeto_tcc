@@ -16,17 +16,14 @@
 }
 
 .cad {
-    margin-top: 0px;
     margin-bottom: 13px;
     align-items: center;
     padding: 20px;
 }
 
 .productButton, .materialButton {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 40%;
+    margin-left: 37%;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .table {
@@ -49,3 +46,5 @@
     padding-bottom: 100px;
     padding-left: 80px;
 }
+
+::-webkit-scrollbar {display:none;} 

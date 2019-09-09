@@ -78,7 +78,7 @@ export default class Material extends Component {
                 <div className="containerCard">
                     <div className="materialButton">
                         <button className={'btn btn-dark cad'}
-                            onClick={this.toggleComponent}>Cadastrar matéria prima</button>
+                            onClick={this.toggleComponent}><h4>Cadastrar matéria prima</h4></button>
                     </div>
                     <br />
                     { this.state.show && <MaterialForm material={this.state.material}

@@ -99,7 +99,7 @@ export default class Product extends Component {
                                             handleAdd={this.handleAdd}
                                             handleClear={this.handleClear}/>}
                 </div>
-                <hr style={{borderColor: '#000'}}/>
+
                 <br />
                 <div>
                     <h3>Lista de produtos</h3>

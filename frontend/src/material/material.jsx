@@ -86,7 +86,6 @@ export default class Material extends Component {
                                                 handleSearch={this.handleSearch}
                                                 handleAdd={this.handleAdd} />}
                 </div>
-                <hr style={{borderColor: '#000'}}/>
                 <br />
                 <div>
                     <h3>Lista de materiais</h3>

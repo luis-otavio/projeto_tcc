@@ -1,5 +1,6 @@
 import React from 'react'
 import IconButton from '../template/iconButton'
+import './productList.css'
 
 export default props => {
 
@@ -27,8 +28,8 @@ export default props => {
         <table className='table'>
             <thead>
                 <tr>
-                    <th>Descrição do produto</th>
-                    <th>Custo final</th>
+                    <th><h4><b>Descrição do produto</b></h4></th>
+                    <th><h4><b>Custo final</b></h4></th>
                     <th className='tableActions'></th>
                 </tr>
             </thead>

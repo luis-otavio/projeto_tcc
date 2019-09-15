@@ -79,6 +79,8 @@ export default class Product extends Component {
     }
 
     handleClear() {
+        const { show } = this.state
+        this.setState({ show : !show })
         this.refreshProduct()
     }
 

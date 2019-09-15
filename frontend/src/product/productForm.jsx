@@ -28,9 +28,12 @@ export default props => (
         <Grid cols='12 9 7'>
             <div>
                 <label>Couro</label>
-                <input id='couro' className='form-control'
+                <select id='couro' className='form-control'
                     onChange={(e) =>{ props.handleChange('couro', e.target.value)}}
-                    value={props.product.couro}></input>
+                    value={props.product.couro}>
+                    <option value="">Selecione</option>
+                    <option value="Couro"></option>
+                </select>
             </div>
         </Grid>
 
@@ -48,16 +51,20 @@ export default props => (
                 <input id='qt_couro' className='form-control'
                     placeholder={'0.000'}
                     onChange={(e) =>{ props.handleChange('qt_couro', e.target.value)}}
-                    value={props.product.qt_couro}></input>
+                    value={props.product.qt_couro}>
+                </input>
             </div>
         </Grid>
 
         <Grid cols='12 9 7'>
             <div>
                 <label>Metal</label>
-                <input id='metal' className='form-control'
+                <select id='metal' className='form-control'
                     onChange={(e) =>{ props.handleChange('metal', e.target.value)}}
-                    value={props.product.metal}></input>
+                    value={props.product.metal}>
+                    <option value="">Selecione</option>
+                    <option value="Couro"></option>
+                </select>
             </div>
         </Grid>
 
@@ -82,9 +89,12 @@ export default props => (
         <Grid cols='12 9 7'>
             <div>
                 <label>Forro</label>
-                <input id='forro' className='form-control'
+                <select id='forro' className='form-control'
                     onChange={(e) =>{ props.handleChange('forro', e.target.value)}}
-                    value={props.product.forro}></input>
+                    value={props.product.forro}>
+                    <option value="">Selecione</option>
+                    <option value="Couro"></option>
+                </select>
             </div>
         </Grid>
 
@@ -109,9 +119,12 @@ export default props => (
         <Grid cols='12 9 7'>
             <div>
                 <label>Ziper</label>
-                <input id='ziper' className='form-control'
+                <select id='ziper' className='form-control'
                     onChange={(e) =>{ props.handleChange('ziper', e.target.value)}}
-                    value={props.product.ziper}></input>
+                    value={props.product.ziper}>
+                    <option value="">Selecione</option>
+                    <option value="Couro"></option>
+                </select>
             </div>
         </Grid>
 
@@ -166,15 +179,15 @@ export default props => (
             <div className="col-12">
                 <button className={'btn btn-default'}
                     onClick={props.handleSearch}>
-                    <i className={'fa fa-search'}> Pesquisar </i>
+                    <i className={'fa fa-search'}></i> Pesquisar
                 </button>
                 <button className={'btn btn-success buttonSalvar'}
                     onClick={props.handleAdd}>
-                    <i className={'fa fa-save'}> Salvar </i>
+                    <i className={'fa fa-save'}></i> Salvar
                 </button>
                 <button className={'btn btn-danger'}
                     onClick={props.handleClear}>
-                    <i className={'fa fa-close'}> Cancelar </i>
+                    <i className={'fa fa-close'}></i> Cancelar
                 </button>
             </div>
             <br />

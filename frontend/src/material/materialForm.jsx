@@ -46,15 +46,15 @@ export default props => (
             <div className="col-12 material">
                 <button className={'btn btn-default'}
                     onClick={props.handleSearch}>
-                    <i className={'fa fa-search'}> Pesquisar </i>
+                    <i className={'fa fa-search'}></i> Pesquisar
                 </button>
                 <button className={'btn btn-success buttonSalvar'}
                     onClick={props.handleAdd}>
-                    <i className={'fa fa-save'}> Salvar </i>
+                    <i className={'fa fa-save'}></i> Salvar
                 </button>
                 <button className={'btn btn-danger'}
                     onClick={props.handleClear}>
-                    <i className={'fa fa-close'}> Cancelar </i>
+                    <i className={'fa fa-close'}></i> Cancelar
                 </button>
             </div>
             <br />

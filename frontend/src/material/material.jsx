@@ -16,9 +16,10 @@ const initialMaterial = {
 export default class Material extends Component {
     constructor(props) {
         super(props)
-        this.state = {  material: { ...initialMaterial },
-                        list: [],
-                        show: false 
+        this.state = {  
+            material: { ...initialMaterial },
+            list: [],
+            hide: false 
         },               
 
         this.handleChange = this.handleChange.bind(this)
@@ -28,12 +29,12 @@ export default class Material extends Component {
         this.handleEdit = this.handleEdit.bind(this)
         this.refreshMaterial()
 
-        this.toggleComponent = this.toggleComponent.bind(this)
+        this.toggle = this.toggle.bind(this)
     }
 
-    toggleComponent() {
-        const { show } = this.state
-        this.setState({ show : !show })
+    toggle() {
+        const { hide } = this.state
+        this.setState({ hide : !hide })
     }
 
     handleAdd() {
@@ -69,8 +70,10 @@ export default class Material extends Component {
     }
 
     handleClear() {
-        this.refreshMaterial()
+        const { hide } = this.state
+        this.setState({ hide : !hide })
     }
+
     render() {
         return (
             <div>
@@ -78,11 +81,11 @@ export default class Material extends Component {
                 <div className="containerCard">
                     <div className="materialButton">
                         <button className={'btn btn-primary cad'}
-                            onClick={this.toggleComponent}>
+                            onClick={this.toggle}>
                             <h4>Cadastrar matéria prima</h4></button>
                     </div>
                     <br />
-                    { this.state.show && <MaterialForm material={this.state.material}
+                    { this.state.hide && <MaterialForm material={this.state.material}
                                                 handleChange={this.handleChange}
                                                 handleSearch={this.handleSearch}
                                                 handleAdd={this.handleAdd} />}

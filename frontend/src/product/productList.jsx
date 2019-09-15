@@ -13,11 +13,11 @@ export default props => {
                  <td>
                     <button className={'btn btn-danger'}
                         onClick={() => props.handleRemove(product)}>
-                        <i className={'fa fa-trash-o'}> Apagar </i>
+                        <i className={'fa fa-trash-o'}></i> Apagar
                     </button>
                     <button className={'btn btn-warning'}
                         onClick={() => props.handleEdit(product)}>
-                        <i className={'fa fa-pencil'}> Editar </i>
+                        <i className={'fa fa-pencil'}></i> Editar
                     </button>
                 </td>
             </tr>

@@ -77,8 +77,9 @@ export default class Material extends Component {
                 <PageHeader name='Matéria Prima' small='Cadastro'></PageHeader>
                 <div className="containerCard">
                     <div className="materialButton">
-                        <button className={'btn btn-dark cad'}
-                            onClick={this.toggleComponent}><h4>Cadastrar matéria prima</h4></button>
+                        <button className={'btn btn-primary cad'}
+                            onClick={this.toggleComponent}>
+                            <h4>Cadastrar matéria prima</h4></button>
                     </div>
                     <br />
                     { this.state.show && <MaterialForm material={this.state.material}
@@ -86,6 +87,7 @@ export default class Material extends Component {
                                                 handleSearch={this.handleSearch}
                                                 handleAdd={this.handleAdd} />}
                 </div>
+                
                 <br />
                 <div>
                     <h3>Lista de materiais</h3>

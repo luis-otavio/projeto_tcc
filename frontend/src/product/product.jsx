@@ -4,7 +4,6 @@ import axios from 'axios'
 import PageHeader from '../template/pageHeader'
 import ProductForm from './productForm'
 import ProductList from './productList'
-import ProductButton from './productButton'
 
 const URL = 'http://localhost:3003/api/products'
 
@@ -89,8 +88,9 @@ export default class Product extends Component {
                 <PageHeader name='Produto' small='Cadastro'></PageHeader>
                 <div className="containerCard">
                     <div className="productButton">
-                        <button className={'btn btn-dark cad'}
-                            onClick={this.toggleComponent}><h4>Cadastrar novo produto</h4></button>
+                        <button className={'btn btn-primary cad'}
+                            onClick={this.toggleComponent}><h4>Cadastrar novo produto</h4>
+                            </button>
                     </div>
                     <br />
                     { this.state.show && <ProductForm product={this.state.product}

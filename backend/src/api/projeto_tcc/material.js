@@ -5,6 +5,7 @@ const materialSchema = new mongoose.Schema({
     mat_tipo: { type: String, require: true },
     mat_nome: { type: String, require: true },
     mat_custo: { type: Number, require: true },
+    createdAd: { type: Date, default: Date.now }
 })
 
 module.exports = restful.model('Material', materialSchema)

@@ -9,7 +9,7 @@ export default props => {
         return list.map(product => (
             <tr key={product._id}>
                 <td>{product.description}</td>
-                <td>R$ 18.40</td>
+                <td>R$ 62,28</td>
                  <td>
                     <button className={'btn btn-danger'}
                         onClick={() => props.handleRemove(product)}>

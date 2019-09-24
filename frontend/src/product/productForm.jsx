@@ -32,7 +32,7 @@ export default props => (
                     onChange={(e) =>{ props.handleChange('couro', e.target.value)}}
                     value={props.product.couro}>
                     <option value="">Selecione</option>
-                    <option value="Couro"></option>
+                    <option value="Couro">Nobuk marrom</option>
                 </select>
             </div>
         </Grid>
@@ -41,7 +41,7 @@ export default props => (
             <div>
                 <label>Valor custo</label>
                 <input id='qt_couro' className='form-control'
-                    placeholder={'R$ 0,00'} disabled></input>
+                    placeholder={'R$ 0,00'} disabled></input> {/* 9.99 */}
             </div>
         </Grid>
 
@@ -63,7 +63,8 @@ export default props => (
                     onChange={(e) =>{ props.handleChange('metal', e.target.value)}}
                     value={props.product.metal}>
                     <option value="">Selecione</option>
-                    <option value="Couro"></option>
+                    <option value="Couro">Latão velho</option>
+                    <option value="Couro">Prata</option>
                 </select>
             </div>
         </Grid>
@@ -72,7 +73,7 @@ export default props => (
             <div>
                 <label>Valor custo</label>
                 <input id='qt_couro' className='form-control'
-                    placeholder={'R$ 0,00'} disabled></input>
+                    placeholder={'R$ 0,00'} disabled></input> {/* 0.69 */}
             </div>
         </Grid>
 
@@ -93,7 +94,8 @@ export default props => (
                     onChange={(e) =>{ props.handleChange('forro', e.target.value)}}
                     value={props.product.forro}>
                     <option value="">Selecione</option>
-                    <option value="Couro"></option>
+                    <option value="Couro">Branco</option>
+                    <option value="Couro">Listrado</option>
                 </select>
             </div>
         </Grid>
@@ -102,7 +104,7 @@ export default props => (
             <div>
                 <label>Valor custo</label>
                 <input id='qt_couro' className='form-control'
-                    placeholder={'R$ 0,00'} disabled></input>
+                    placeholder={'R$ 0,00'} disabled></input> {/* 4.55 */}
             </div>
         </Grid>
 
@@ -123,7 +125,7 @@ export default props => (
                     onChange={(e) =>{ props.handleChange('ziper', e.target.value)}}
                     value={props.product.ziper}>
                     <option value="">Selecione</option>
-                    <option value="Couro"></option>
+                    <option value="Couro">Nylon preto de metal 5MM</option>
                 </select>
             </div>
         </Grid>
@@ -132,7 +134,7 @@ export default props => (
             <div>
                 <label>Valor custo</label>
                 <input id='qt_couro' className='form-control'
-                    placeholder={'R$ 0,00'} disabled></input>
+                    placeholder={'R$ 0,00'} disabled></input> {/* 5.45 */}
             </div>
         </Grid>
 
@@ -170,7 +172,7 @@ export default props => (
             <div className="totalProduct">
                 <h4>Total: </h4>
                 <div >
-                    <h2>R$ 0,00</h2>
+                    <h2>R$ 0,00</h2> {/* 62.28 */}
                 </div>
             </div>
         </Grid>
